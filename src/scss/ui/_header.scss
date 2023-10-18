@@ -2,15 +2,14 @@
 @use 'bases/mixins' as m;
 
 .header{
-    background-image: url('../img/header_bg.jpg');
+    background-image: linear-gradient(to right, transparentize(v.$primario, .1) 0% ,transparentize(v.$primario, .1) 50%),url(../img/header_bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     // background-attachment: fixed;
     position: relative;
-    background-image: linear-gradient(90deg,rgba(59,72,98,.9) 0,rgba(59,72,98,.9)),url(../img/header_bg.jpg);
 
-    .header__content{
+    &__content{
         position: relative;
         color: v.$blanco;
         padding: 3rem 0 15% 0 ;
@@ -23,19 +22,19 @@
 
         }
     }
-    .header__topBar{
+    &__topBar{
         display: flex;
         flex-direction: column;
-        gap: 5rem;
-        justify-content: space-between;
         align-items: center;
-
+        gap: 5rem;
+        
         @include m.tablet{
+            justify-content: space-between;
             flex-direction: row;
             gap: unset;
         }
     }
-    .header__logo{
+    &__logo{
         width: 25rem;
         @include m.tablet{
             width: 22rem;
@@ -44,28 +43,28 @@
             width: 25rem;
         }
     }
-    .header__info{
+    &__info{
         padding-top: 2rem;
         @include m.tablet{
             padding-top: 10rem;
             max-width: 50rem;
         }
     }
-    .header__titulo{
+    &__titulo{
         text-align: center;
         @include m.tablet{
             text-align: unset;
             margin-bottom: 2rem;
         }
     }
-    .header__texto{
-        color: inherit;
+    &__texto{
+        color: inherit; 
         display: none;
         @include m.tablet{
             display: unset;
         }
     }
-    .header__imagen{
+    &__imagen{
         display: none;
         position: absolute;
         bottom: -5rem;
@@ -82,17 +81,17 @@
 
 }
 .navegacion{
-    .navegacion__list{
+    &__list{
         display: flex;
-        gap: 2rem;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+        gap: 2rem;
 
         @include m.tablet{
             flex-direction: row;
         }
     }
-    .navegacion__enlace{
+    &__enlace{
         color: inherit;
         @include m.tablet{
             font-size: 1.6rem;

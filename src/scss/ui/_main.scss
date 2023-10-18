@@ -1,0 +1,85 @@
+@use 'bases/variables' as v; 
+@use 'bases/mixins' as m;
+
+.propiedades{
+    padding-top: 5rem;
+    @media (min-width: 768px) {
+        padding-top: 8rem;
+    }
+    &__heading{
+        @include m.heading;
+    }
+    &__grid{
+        @include m.grid(1, 2rem);
+
+        @media (min-width: 768px) {
+            @include m.grid(3, 2rem);
+        }
+    }
+
+}
+.propiedad{
+    background-color: v.$blanco;
+
+   
+    /* Bucles en SASS
+        la sintaxis es la siguiente.
+
+        - indica una variable '$i como iterador, 
+        - indica un intervalo que quieres que se ejecute tu codigo, en este ejemplo del 1 hasta el 6 'from 1 through 6'
+    */
+    @for $i from 1 through 6 {
+        // variable
+        $imagen: '../img/propiedad_' + $i + '.jpg';
+        
+        // param -> sintaxis #{nombreVariable}
+        &:nth-child(#{$i}) &__header {
+            background-image: linear-gradient(to bottom, transparentize( v.$negro, 1 ) 0%, transparentize(v.$negro, .3%) 100%), url($imagen);
+        }
+    }
+
+
+
+    &__header{
+        /* aspect-ratio 
+            se utiliza para controlar el tamaño y la relación de aspecto de un elemento de diseño, como una imagen o un contenedor. La relación de aspecto es la relación entre la anchura y la altura de un elemento, y es comúnmente utilizada para asegurarse de que un elemento mantenga sus proporciones correctas, especialmente cuando se redimensiona la ventana del navegador o el dispositivo.
+
+                aspect-ratio: ancho / alto;
+
+            ancho y alto: Los valores numéricos que representan la relación de aspecto deseada del elemento. Por ejemplo, si deseas que el elemento tenga una relación de aspecto 16:9, escribirías 16 / 9.
+        */ 
+        aspect-ratio: 16 / 10 ;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+    }
+    &__titulo{
+        padding: 1rem;
+        color: v.$blanco;
+        margin: 0;
+        font-size: 2.4rem;
+        
+    }
+    &__info{
+        padding: 2rem;
+    }
+    &__texto{
+        margin-bottom: 0;
+    }
+    &__precio{
+        margin: 0;
+        font-size: 2.5rem;
+        @include m.desktop{
+            font-size: 3rem;
+
+        }
+    }
+    &__link{
+        @include m.boton(v.$primario, v.$blanco);
+        display: block;
+        text-transform: uppercase;
+        
+    }
+
+    
+}
