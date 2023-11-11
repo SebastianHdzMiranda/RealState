@@ -189,7 +189,7 @@
         </div>
     </section>
 
-    <section class="testimoniales-blog contenedor">
+    <div class="testimoniales-blog contenedor">
         <section class="testimoniales">
             <h2 class="testimoniales__titulo">Que dicen <span>Nuestros Clientes</span></h2>
 
@@ -207,7 +207,7 @@
         <section class="blogs">
             <h2 class="blogs__titulo">Últimas entradas <span>de nuestro Blog</span></h2>
 
-            <article class="blog">
+            <div class="blog">
                 <picture>
                     <source srcset="build/img/blog_1.avif" type="image/avif">
                     <source srcset="build/img/blog_1.webp" type="image/webp">
@@ -217,15 +217,15 @@
 
                 <div class="blog__info">
                     <h3 class="blog__titulo">Titulo aquí</h3>
-                    <p class="blog__meta">Publicado por bienes raices el 10 de agosto de 2022 - 10 Comentarios</p>
+                    <p class="blog__meta">Publicado por bienes raices el 10 de ag osto de 2022 - 10 Comentarios</p>
 
                     <p class="blog__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est neque, asperiores veritatis dolorum nisi</p>
 
                     <a href="#" class="blog__enlace">Leer Artículo</a>
                 </div>
 
-            </article>
-            <article class="blog">
+            </div>
+            <div class="blog">
                 <picture>
                     <source srcset="build/img/blog_2.avif" type="image/avif">
                     <source srcset="build/img/blog_2.webp" type="image/webp">
@@ -242,8 +242,8 @@
                     <a href="#" class="blog__enlace">Leer Artículo</a>
                 </div>
 
-            </article>
-            <article class="blog">
+            </div>
+            <div class="blog">
                 <picture>
                     <source srcset="build/img/blog_3.avif" type="image/avif">
                     <source srcset="build/img/blog_3.webp" type="image/webp">
@@ -260,10 +260,47 @@
                     <a href="#" class="blog__enlace">Leer Artículo</a>
                 </div>
 
-            </article>
+            </div>
             
         </section>
-    </section>
+    </div>
 
+    <footer class="footer">
+        <div class="footer__grid contenedor">
+            <div class="footer__box">
+                <h3 class="footer__heading">Navegacion</h3>
+                <nav class="navegacion">
+                    <ul class="navegacion__list navegacion__list--vertical">
+                        <li class="navegacion__item navegacion__item--vertical">
+                            <a href="#" class="navegacion__enlace">Nosotros</a>
+                        </li>
+                        <li class="navegacion__item navegacion__item--vertical">
+                            <a href="#" class="navegacion__enlace">Propiedades</a>
+                        </li>
+                        <li class="navegacion__item navegacion__item--vertical">
+                            <a href="#" class="navegacion__enlace">Blog</a>
+                        </li>
+                        <li class="navegacion__item navegacion__item--vertical">
+                            <a href="#" class="navegacion__enlace">Testimoniales</a>
+                        </li>
+                        <li class="navegacion__item navegacion__item--vertical">
+                            <a href="#" class="navegacion__enlace">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__box">
+                <h3 class="footer__heading">Nosotros</h3>
+                <p class="footer__texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolore quo tempore! Atque porro quibusdam voluptas nisi corrupti. Unde, ipsam vel deleniti magnam nulla nemo suscipit sunt porro blanditiis? Nemo.</p>
+            </div>
+            <div class="footer__box footer__box--img">
+                <img src="build/img/logo.svg" alt="imagen logo" class="footer__img">
+            </div>
+
+        </div>
+        <p class="footer__copyright">Todos los Derechos Reservados Real State &copy;</p>
+    </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

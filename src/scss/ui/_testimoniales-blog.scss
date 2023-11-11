@@ -2,7 +2,7 @@
 @use 'bases/mixins' as m;
 
 .testimoniales-blog {
-    margin-top: 5rem;
+    margin-block: 5rem;
     @include m.desktopXL{
         display: flex;
         gap: 4rem;
@@ -12,24 +12,19 @@
 .testimoniales{
     flex: 1;
     &__titulo{
-        @include m.heading();
+        @include m.heading(true);
         margin-bottom: 3rem;
-        span {
-            display: block;
-        }
     }
-    &__testimonio{
-        background-color: v.$blanco;
-        text-align: center;
-        padding: 10rem 1rem 2rem 1rem;
-        margin-top: -10rem;
-        @include m.desktopXL{
-            padding-inline: 2rem;
-        }
-    }
+   
     &__imagen{
         width: 20rem;
         margin: 0 auto;
+    }
+    &__testimonio{
+        background-color: v.$blanco;
+        margin-top: -10rem;
+        padding: 10rem 2rem 2rem 2rem;
+        text-align: center;
     }
     &__nombre{
         font-size: 2.4rem;
@@ -41,12 +36,11 @@
             content: '';
             background-image: url(../img/quote.svg);
             display: inline-block;
-            background-size: 40px;
-            margin-bottom: -.6rem;
-            margin-right: .8rem;
+            width: 4rem;
+            height: 4rem;
             background-repeat: no-repeat;
-            width: 40px;
-            height: 40px;
+            margin-right: .8rem;
+            margin-bottom: -.6rem;
             margin-left: 1.3rem;
         }
     }
@@ -60,10 +54,7 @@
         margin-top: 0;
     }
     &__titulo{
-        @include m.heading();
-        span {
-            display: block;
-        }
+        @include m.heading(true);
     }
 
 }
@@ -92,14 +83,8 @@
             padding: 2rem 3rem;
         }
     }
-    &__titulo{
-
-    }
     &__meta{
         font-size: 1.4rem;
-    }
-    &__texto{
-
     }
     &__enlace{
         @include m.boton(v.$primario, v.$blanco);

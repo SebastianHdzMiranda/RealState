@@ -49,9 +49,16 @@
             ancho y alto: Los valores numéricos que representan la relación de aspecto deseada del elemento. Por ejemplo, si deseas que el elemento tenga una relación de aspecto 16:9, escribirías 16 / 9.
         */ 
         aspect-ratio: 16 / 10 ;
-        background-size: cover;
+        background-size: 100% 210%;
+        background-repeat: no-repeat;
         display: flex;
         align-items: flex-end;
+        @include m.tablet{
+            background-size: auto 150%;
+        }
+        @include m.desktop{
+            background-size: auto 130%;
+        }
     }
     &__titulo{
         padding: 1rem;

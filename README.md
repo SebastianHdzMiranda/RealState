@@ -3,6 +3,7 @@
 # transparentize
 
 # bucles
+
      Bucles en SASS
         la sintaxis es la siguiente.
 
@@ -18,3 +19,26 @@
             background-image: url($imagen);
         }
     }
+
+# Condicionales
+    se puede condicionar una propiedad en los mixins atraves de sus parametros, Ej:
+
+        //desde el mixin
+        @mixin heading($bgNegro: false) {
+            
+            color: #fff;
+
+            @if($bgNegro){
+                color: #000;
+            }
+
+        }
+
+        // desde la declaracion
+        @include m.heading(true);
+        @include m.heading; //no se aplica la condicion
+
+    
+
+
+    
